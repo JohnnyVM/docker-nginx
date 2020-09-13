@@ -1,0 +1,13 @@
+version: "3"
+services:
+  web:
+    image: dev-nginx:latest
+    build:
+      context: .
+    volumes:
+      - ./templates:/etc/nginx/templates
+      - ./projects:/etc/nginx/html:ro
+    ports:
+      - "80:80"
+      - "443:443"
+
